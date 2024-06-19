@@ -35,7 +35,7 @@ El presente repositorio, hace alusión a una tarea realizada en la materia admin
 
 :coffee: [@Milagros Llanos](https://github.com/moonstone3798)
 
-:pancakes: [@Martín Emiliano Paz](https://github.com/moonstone3798)
+:pancakes: [@Martín Emiliano Paz](https://github.com/Martho1587)
 
 :poultry_leg: [@Tatiana Pinzón Rodríguez](https://github.com/TatianaPinzonR)
 

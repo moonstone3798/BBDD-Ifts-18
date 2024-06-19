@@ -34,6 +34,6 @@ El presente repositorio, hace alusión a una tarea realizada en la materia admin
 
 :pancakes: [@Martín Emiliano Paz](https://github.com/moonstone3798)
 
-:poultry_leg: [@Tatiana Pinzón Rodríguez]([https://github.com/moonstone3798](https://github.com/TatianaPinzonR))
+:poultry_leg: [@Tatiana Pinzón Rodríguez](https://github.com/TatianaPinzonR)
 
 :meat_on_bone: [@Brian Pitz](https://github.com/ElYabran)

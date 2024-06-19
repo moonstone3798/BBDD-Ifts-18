@@ -24,7 +24,7 @@ El presente repositorio, hace alusión a una tarea realizada en la materia admin
 
 ## *Autores*
 
-:wine_glass: [@Jorge Nadir Adad](https://github.com/moonstone3798)
+:wine_glass: [@Jorge Nadir Adad](https://github.com/nadiradad)
 
 :spaghetti: [@Pablo García Ferré](https://github.com/Pgarfer08)
 
@@ -34,6 +34,6 @@ El presente repositorio, hace alusión a una tarea realizada en la materia admin
 
 :pancakes: [@Martín Emiliano Paz](https://github.com/moonstone3798)
 
-:poultry_leg: [@Tatiana Pinzón Rodríguez](https://github.com/moonstone3798)
+:poultry_leg: [@Tatiana Pinzón Rodríguez]([https://github.com/moonstone3798](https://github.com/TatianaPinzonR))
 
 :meat_on_bone: [@Brian Pitz](https://github.com/ElYabran)

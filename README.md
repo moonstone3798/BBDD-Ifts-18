@@ -48,3 +48,18 @@ El presente repositorio, hace alusión a una tarea realizada en la materia admin
 
 ## *El proyecto*
 Nuestro cliente, Doña Gloria Gourmet, es un restaurant de categoría. El cual nos ha encomendado la realización de la base de datos, que utilizaran para desarrollar el software de gestión del mismo. 
+
+
+
+
+
+
+##*Diagrama de entidad relación*
+![DER](Imágenes/DER.png)
+
+
+
+
+
+##*Diagrama de tablas*
+![Diagrama de tablas](Imágenes/diagrama_de_tablas.png)

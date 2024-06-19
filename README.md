@@ -65,3 +65,23 @@ Nuestro cliente, Doña Gloria Gourmet, es un restaurant de categoría. El cual n
 ## *Diagrama de tablas*
 
 ![Diagrama de tablas](Imágenes/diagrama_de_tablas.png)
+
+
+
+
+
+
+## *Restricciones propuestas por el cliente*
+* una reserva por cliente en el día 
+* como máximo por reserva 10 personas
+* cada reserva debe poseer una seña
+
+
+
+
+
+## *Reportes solicitados por el cliente*
+* listado de menues más consumidos
+* los días donde hay mayor N° reservas
+* consumidor con mayor cantidad de reservas
+* menú más solicitado/consumido

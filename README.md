@@ -22,6 +22,9 @@ El presente repositorio, hace alusión a una tarea realizada en la materia admin
 
 
 
+
+
+
 ## *Autores*
 
 :wine_glass: [@Jorge Nadir Adad](https://github.com/nadiradad)
@@ -37,3 +40,11 @@ El presente repositorio, hace alusión a una tarea realizada en la materia admin
 :poultry_leg: [@Tatiana Pinzón Rodríguez](https://github.com/TatianaPinzonR)
 
 :meat_on_bone: [@Brian Pitz](https://github.com/ElYabran)
+
+
+
+
+
+
+## *El proyecto*
+Nuestro cliente, Doña Gloria Gourmet, es un restaurant de categoría. El cual nos ha encomendado la realización de la base de datos, que utilizaran para desarrollar el software de gestión del mismo. 

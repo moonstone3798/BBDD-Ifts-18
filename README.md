@@ -26,7 +26,7 @@ El presente repositorio, hace alusión a una tarea realizada en la materia admin
 
 :wine_glass: [@Jorge Nadir Adad](https://github.com/moonstone3798)
 
-:spaghetti: [@Pablo García Ferré](https://github.com/moonstone3798)
+:spaghetti: [@Pablo García Ferré](https://github.com/Pgarfer08)
 
 :fork_and_knife: [@Tomás Edelcopp](https://github.com/tedelcopp)
 

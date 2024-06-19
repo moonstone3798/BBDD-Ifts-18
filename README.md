@@ -54,12 +54,14 @@ Nuestro cliente, Doña Gloria Gourmet, es un restaurant de categoría. El cual n
 
 
 
-##*Diagrama de entidad relación*
+## *Diagrama de entidad relación*
+
 ![DER](Imágenes/DER.png)
 
 
 
 
 
-##*Diagrama de tablas*
+## *Diagrama de tablas*
+
 ![Diagrama de tablas](Imágenes/diagrama_de_tablas.png)

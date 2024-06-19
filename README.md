@@ -1,5 +1,5 @@
 
-# Doña Gloria Gourmet
+# *Doña Gloria Gourmet*
 
 El presente repositorio, hace alusión a una tarea realizada en la materia administración de base de datos de la tecnicatura de desarrollo de software del instituto IFTS18.
 
@@ -9,7 +9,7 @@ El presente repositorio, hace alusión a una tarea realizada en la materia admin
 
 
 
-## Información de la materia
+## *Información de la materia*
 **Nombre del grupo:** Miluteam
 
 **Profesor:** Emanuel Alejandro Odstrcil
@@ -22,12 +22,12 @@ El presente repositorio, hace alusión a una tarea realizada en la materia admin
 
 
 
-## Autores
+## *Autores*
 
-- [@Jorge Nadir Adad]()
-- [@Pablo García Ferré]()
-- [@Tomás Edelcopp](https://github.com/tedelcopp)
-- [@Milagros Llanos](https://github.com/moonstone3798)
-- [@Martín Emiliano Paz]()
-- [@Tatiana Pinzón Rodríguez]()
-- [@Brian Pitz](https://github.com/ElYabran)
+:wine_glass: [@Jorge Nadir Adad](https://github.com/moonstone3798)
+:spaghetti: [@Pablo García Ferré](https://github.com/moonstone3798)
+:fork_and_knife: [@Tomás Edelcopp](https://github.com/tedelcopp)
+:coffee: [@Milagros Llanos](https://github.com/moonstone3798)
+:pancakes: [@Martín Emiliano Paz](https://github.com/moonstone3798)
+:poultry_leg: [@Tatiana Pinzón Rodríguez](https://github.com/moonstone3798)
+:meat_on_bone: [@Brian Pitz](https://github.com/ElYabran)

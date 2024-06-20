@@ -34,7 +34,7 @@ El presente repositorio, hace alusión a una tarea realizada en la materia admin
 
 :fork_and_knife: [@Tomás Edelcopp](https://github.com/tedelcopp)
 
-:coffee: [@Milagros Llanos](https://github.com/moonstone3798)
+:coffee: [@Milagros Belén Llanos](https://github.com/moonstone3798)
 
 :pancakes: [@Martín Emiliano Paz](https://github.com/Martho1587)
 

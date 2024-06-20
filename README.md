@@ -47,7 +47,7 @@
 
 
 ## *El proyecto*
-Nuestro cliente, Doña Gloria Gourmet, es un restaurant de categoría. El cual nos ha encomendado la realización de la base de datos, que utilizaran para desarrollar el software de gestión del mismo. 
+*Nuestro cliente, Doña Gloria Gourmet, es un restaurant de categoría. El cual nos ha encomendado la realización de la base de datos, que utilizaran para desarrollar el software de gestión del mismo.* 
 
 
 
@@ -72,17 +72,17 @@ Nuestro cliente, Doña Gloria Gourmet, es un restaurant de categoría. El cual n
 
 
 ## *Restricciones propuestas por el cliente*
-* una reserva por cliente en el día 
-* como máximo por reserva 10 personas
-* cada reserva debe poseer una seña
+* *una reserva por cliente en el día* 
+* *como máximo por reserva 10 personas*
+* *cada reserva debe poseer una seña*
 
 
 
 
 
 ## *Reportes solicitados por el cliente*
-* listado de menues más consumidos
-* los días donde hay mayor N° reservas
-* consumidor con mayor cantidad de reservas
-* menú más solicitado/consumido
+* *listado de menues más consumidos*
+* *los días donde hay mayor N° reservas*
+* *consumidor con mayor cantidad de reservas*
+* *menú más solicitado/consumido*
 

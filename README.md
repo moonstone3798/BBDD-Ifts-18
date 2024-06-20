@@ -1,8 +1,7 @@
-*
-# Doña Gloria Gourmet
+# *Doña Gloria Gourmet*
 ![portada](Imágenes/cena.jpeg)
 
-El presente repositorio, hace alusión a una tarea realizada en la materia administración de base de datos de la tecnicatura de desarrollo de software del instituto IFTS18.
+*El presente repositorio, hace alusión a una tarea realizada en la materia administración de base de datos de la tecnicatura de desarrollo de software del instituto IFTS18.*
 
 
 
@@ -86,4 +85,4 @@ Nuestro cliente, Doña Gloria Gourmet, es un restaurant de categoría. El cual n
 * los días donde hay mayor N° reservas
 * consumidor con mayor cantidad de reservas
 * menú más solicitado/consumido
-*
+

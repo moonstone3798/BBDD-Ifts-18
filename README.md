@@ -10,15 +10,15 @@
 
 
 ## *Información de la materia*
-**Nombre del grupo:** Miluteam
+**_Nombre del grupo:_** *Miluteam*
 
-**Profesor:** Emanuel Alejandro Odstrcil
+**_Profesor:_** *Emanuel Alejandro Odstrcil*
 
-**Cuatrimestre:** 1°
+**_Cuatrimestre:_** *1°*
 
-**Año:** 2024
+**_Año:_** *2024*
 
-**Institución:** IFTS 18 
+**_Institución:_** *IFTS 18* 
 
 
 

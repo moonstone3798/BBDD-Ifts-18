@@ -81,8 +81,9 @@
 
 
 ## *Reportes solicitados por el cliente*
-* *listado de menues más consumidos*
+* *Listado de los dos menues más consumidos*  
 * *los días donde hay mayor N° reservas*
-* *consumidor con mayor cantidad de reservas*
-* *menú más solicitado/consumido*
+* *Consumidor con mayor cantidad de reservas*
+* *Obtener cual es la comida y la bebida que se pidió en el pedido n° 2*
+* *La factura más cara* 
 

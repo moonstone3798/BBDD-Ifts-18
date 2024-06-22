@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-06-2024 a las 04:33:02
+-- Tiempo de generación: 22-06-2024 a las 00:20:43
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -18,8 +18,30 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `restaurante`
+-- Base de datos: `gloria_gourment`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `bebidas`
+--
+
+CREATE TABLE `bebidas` (
+  `idBebida` int(3) NOT NULL,
+  `nombre` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `bebidas`
+--
+
+INSERT INTO `bebidas` (`idBebida`, `nombre`) VALUES
+(1, 'Agua mineral'),
+(2, 'Vino tinto'),
+(3, 'Refresco de cola'),
+(4, 'Jugo de naranja'),
+(5, 'Cerveza');
 
 -- --------------------------------------------------------
 
@@ -31,20 +53,18 @@ CREATE TABLE `clientes` (
   `idCliente` int(3) NOT NULL,
   `nombre` varchar(30) NOT NULL,
   `apellido` varchar(50) NOT NULL,
-  `telefono` int(10) NOT NULL,
-  `correo` varchar(30) NOT NULL
+  `telefono` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `clientes` (`idCliente`, `nombre`, `apellido`, `telefono`, `correo`) VALUES
-(1, 'Juan', 'Pérez', 1122336644, 'juan.perez@example.com'),
-(2, 'María', 'Gómez', 1177884455, 'maria.gomez@example.com'),
-(3, 'Luis', 'Rodríguez', 1144885522, 'luis.rodriguez@example.com'),
-(4, 'Ana', 'García', 1133662255, 'ana.garcia@example.com'),
-(5, 'Carlos', 'Fernández', 1188445599, 'carlos.fernandez@example.com');
+INSERT INTO `clientes` (`idCliente`, `nombre`, `apellido`, `telefono`) VALUES
+(1, 'Juan', 'Pérez', 1122334455),
+(2, 'María', 'García', 2147483647),
+(3, 'Carlos', 'López', 2147483647),
+(4, 'Laura', 'Martínez', 2147483647);
 
 -- --------------------------------------------------------
 
@@ -67,11 +87,9 @@ CREATE TABLE `empleados` (
 --
 
 INSERT INTO `empleados` (`idEmpleado`, `direccion`, `nombre`, `apellido`, `dni`, `telefono`, `idPuesto`) VALUES
-(1, 'Calle Principal 123', 'Pedro', 'Martínez', 12145678, 1122334455, 1),
-(2, 'Avenida Central 456', 'Ana', 'López', 87651321, 2147483647, 2),
-(3, 'Calle Secundaria 789', 'Laura', 'Gutiérrez', 98765432, 1158846991, 2),
-(4, 'Avenida Norte 345', 'David', 'López', 87654321, 1188992233, 1),
-(5, 'Calle Este 678', 'Sofía', 'Martín', 56789012, 1144558866, 2);
+(4, 'Calle Principal 123', 'Pedro', 'Rodríguez', 20558448, 1158846994, 1),
+(5, 'Av. Libertador 456', 'Ana', 'Sánchez', 17555888, 1133366412, 2),
+(6, 'Av. Bolívar 789', 'Diego', 'Gómez', 19336445, 1158849955, 3);
 
 -- --------------------------------------------------------
 
@@ -91,11 +109,19 @@ CREATE TABLE `facturas` (
 --
 
 INSERT INTO `facturas` (`idFactura`, `idPedido`, `precioTotal`, `fechaFactura`) VALUES
-(1, 1, 50.00, '2024-06-18 15:00:00'),
-(2, 2, 75.00, '2024-06-18 17:30:00'),
-(3, 3, 100.00, '2024-06-19 16:15:00'),
-(4, 4, 120.00, '2024-06-19 17:45:00'),
-(5, 5, 80.00, '2024-06-19 19:00:00');
+(1, 1, 51000.00, '2024-06-21 22:12:26'),
+(2, 2, 45750.00, '2024-06-21 22:12:39'),
+(3, 3, 76500.00, '2024-06-21 22:13:08'),
+(4, 4, 51000.00, '2024-06-21 22:12:48'),
+(5, 5, 45750.00, '2024-06-21 22:13:54'),
+(6, 6, 76500.00, '2024-06-21 22:14:00'),
+(7, 7, 57000.00, '2024-06-21 22:13:13'),
+(8, 8, 42250.00, '2024-06-21 22:13:19'),
+(9, 9, 73800.00, '2024-06-21 22:13:29'),
+(10, 10, 45750.00, '2024-06-21 22:13:33'),
+(11, 11, 10200.00, '2024-06-21 22:13:38'),
+(12, 12, 85500.00, '2024-06-21 22:13:43'),
+(13, 13, 42250.00, '2024-06-21 22:13:49');
 
 -- --------------------------------------------------------
 
@@ -109,7 +135,7 @@ CREATE TABLE `menues` (
   `entrada` varchar(30) NOT NULL,
   `platoPrincipal` varchar(30) NOT NULL,
   `postre` varchar(30) NOT NULL,
-  `degustacionBebidas` varchar(30) NOT NULL,
+  `idBebida` int(3) NOT NULL,
   `adicional` varchar(30) NOT NULL,
   `precioUnitario` float(8,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -118,12 +144,14 @@ CREATE TABLE `menues` (
 -- Volcado de datos para la tabla `menues`
 --
 
-INSERT INTO `menues` (`idMenu`, `nombre`, `entrada`, `platoPrincipal`, `postre`, `degustacionBebidas`, `adicional`, `precioUnitario`) VALUES
-(1, 'Menú Ejecutivo', 'Ensalada', 'Filete de Salmón', 'Tarta de Manzana', 'Vino tinto', 'Café', 25.00),
-(2, 'Menú Infantil', 'Croquetas', 'Pechuga de Pollo', 'Helado', 'Jugo de Frutas', 'Galletas', 15.00),
-(3, 'Menú Vegetariano', 'Crema de Calabaza', 'Risotto de Champiñones', 'Fruta Fresca', 'Agua Mineral', 'Té Verde', 20.00),
-(4, 'Menú Ejecutivo 2', 'Sopa de Verduras', 'Lomo a la Pimienta', 'Mousse de Chocolate', 'Vino Blanco', 'Café', 30.00),
-(5, 'Menú Infantil 2', 'Nuggets de Pollo', 'Puré de Papas', 'Gelatina', 'Jugo de Naranja', 'Galletas', 15.00);
+INSERT INTO `menues` (`idMenu`, `nombre`, `entrada`, `platoPrincipal`, `postre`, `idBebida`, `adicional`, `precioUnitario`) VALUES
+(1, 'Menú del día', 'Ensalada mixta', 'Pollo a la parrilla', 'Helado de vainilla', 1, 'Pan casero', 25500.00),
+(2, 'Menú gourmet', 'Carpaccio de salmón', 'Lomo Wellington', 'Tarta de frutas', 2, 'Copa de vino', 45750.00),
+(3, 'Menú ejecutivo', 'Sopa de verduras', 'Filete de salmón', 'Mousse de chocolate', 4, 'Pan tostado', 38500.00),
+(4, 'Menú infantil', 'Hamburguesa', 'Papas fritas', 'Helado de chocolate', 3, 'Refresco de naranja', 20750.00),
+(5, 'Menú vegetariano', 'Ensalada de quinoa', 'Tofu a la plancha', 'Fruta fresca', 1, 'Agua con limón', 32000.00),
+(6, 'Menú mediterráneo', 'Gazpacho', 'Paella mixta', 'Crema catalana', 2, 'Copa de vino blanco', 42250.00),
+(7, 'Menú oriental', 'Rolls de sushi variados', 'Pollo teriyaki', 'Mochi de matcha', 5, 'Té verde', 36900.00);
 
 -- --------------------------------------------------------
 
@@ -132,10 +160,10 @@ INSERT INTO `menues` (`idMenu`, `nombre`, `entrada`, `platoPrincipal`, `postre`,
 --
 
 CREATE TABLE `pedidos` (
-  `idPedido` int(3) NOT NULL,
+  `idPedido` int(10) NOT NULL,
   `idCliente` int(3) NOT NULL,
   `idMenu` int(3) NOT NULL,
-  `cantMenues` int(2) NOT NULL,
+  `cantidadMenues` int(2) NOT NULL,
   `precioPedido` float(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -143,12 +171,20 @@ CREATE TABLE `pedidos` (
 -- Volcado de datos para la tabla `pedidos`
 --
 
-INSERT INTO `pedidos` (`idPedido`, `idCliente`, `idMenu`, `cantMenues`, `precioPedido`) VALUES
-(1, 1, 1, 2, 50.00),
-(2, 2, 2, 3, 45.00),
-(3, 3, 3, 5, 100.00),
-(4, 4, 4, 4, 120.00),
-(5, 5, 5, 3, 45.00);
+INSERT INTO `pedidos` (`idPedido`, `idCliente`, `idMenu`, `cantidadMenues`, `precioPedido`) VALUES
+(1, 1, 1, 2, 51000.00),
+(2, 2, 2, 1, 45750.00),
+(3, 3, 1, 3, 76500.00),
+(4, 1, 1, 2, 51000.00),
+(5, 2, 2, 1, 45750.00),
+(6, 3, 1, 3, 76500.00),
+(7, 4, 3, 2, 57000.00),
+(8, 1, 4, 1, 42250.00),
+(9, 2, 5, 2, 73800.00),
+(10, 3, 2, 1, 45750.00),
+(11, 4, 1, 4, 102000.00),
+(12, 1, 3, 3, 85500.00),
+(13, 2, 4, 1, 42250.00);
 
 -- --------------------------------------------------------
 
@@ -158,7 +194,7 @@ INSERT INTO `pedidos` (`idPedido`, `idCliente`, `idMenu`, `cantMenues`, `precioP
 
 CREATE TABLE `puestos` (
   `idPuesto` int(1) NOT NULL,
-  `nombrePuesto` varchar(30) NOT NULL,
+  `nombre` varchar(30) NOT NULL,
   `sueldo` float(8,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -166,11 +202,10 @@ CREATE TABLE `puestos` (
 -- Volcado de datos para la tabla `puestos`
 --
 
-INSERT INTO `puestos` (`idPuesto`, `nombrePuesto`, `sueldo`) VALUES
-(1, 'Chef', 3000.00),
-(2, 'Camarero', 2000.00),
-(3, 'Barman', 1800.00),
-(4, 'Recepcionista', 1500.00);
+INSERT INTO `puestos` (`idPuesto`, `nombre`, `sueldo`) VALUES
+(1, 'Camarero', 980000.00),
+(2, 'Chef', 800000.00),
+(3, 'Cajero', 750000.00);
 
 -- --------------------------------------------------------
 
@@ -184,7 +219,7 @@ CREATE TABLE `reservas` (
   `cantPersonas` int(2) NOT NULL,
   `idCliente` int(3) NOT NULL,
   `senia` float(7,2) NOT NULL,
-  `fechahora` datetime NOT NULL,
+  `fecha` datetime NOT NULL,
   `idTurno` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -192,12 +227,20 @@ CREATE TABLE `reservas` (
 -- Volcado de datos para la tabla `reservas`
 --
 
-INSERT INTO `reservas` (`idReserva`, `nroMesa`, `cantPersonas`, `idCliente`, `senia`, `fechahora`, `idTurno`) VALUES
-(1, 5, 4, 1, 50.00, '2024-06-20 19:00:00', 1),
-(2, 3, 2, 2, 30.00, '2024-06-21 20:30:00', 2),
-(3, 8, 3, 3, 30.00, '2024-06-20 18:30:00', 2),
-(4, 12, 6, 4, 50.00, '2024-06-21 19:00:00', 1),
-(5, 6, 2, 5, 20.00, '2024-06-22 20:00:00', 2);
+INSERT INTO `reservas` (`idReserva`, `nroMesa`, `cantPersonas`, `idCliente`, `senia`, `fecha`, `idTurno`) VALUES
+(1, 5, 4, 4, 20000.00, '2024-06-22 20:00:00', 1),
+(2, 7, 6, 3, 30000.00, '2024-06-23 19:30:00', 2),
+(3, 2, 2, 2, 10000.00, '2024-06-24 21:00:00', 3),
+(4, 3, 4, 1, 15000.00, '2024-06-22 19:00:00', 1),
+(5, 6, 2, 2, 10000.00, '2024-06-23 20:30:00', 2),
+(6, 1, 6, 3, 25000.00, '2024-06-24 21:00:00', 3),
+(7, 4, 3, 4, 18000.00, '2024-06-25 18:00:00', 1),
+(8, 5, 5, 1, 20000.00, '2024-06-26 19:30:00', 2),
+(9, 2, 2, 2, 10000.00, '2024-06-27 20:00:00', 3),
+(10, 7, 8, 3, 30000.00, '2024-06-28 19:00:00', 1),
+(11, 8, 4, 4, 16000.00, '2024-06-29 20:30:00', 2),
+(12, 9, 3, 1, 15000.00, '2024-06-30 21:00:00', 3),
+(13, 10, 6, 2, 20000.00, '2024-07-01 18:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -215,12 +258,19 @@ CREATE TABLE `turnos` (
 --
 
 INSERT INTO `turnos` (`idTurno`, `turno`) VALUES
-(1, 'Almuerzo'),
-(2, 'Cena');
+(1, 'Mañana'),
+(2, 'Tarde'),
+(3, 'Noche');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `bebidas`
+--
+ALTER TABLE `bebidas`
+  ADD PRIMARY KEY (`idBebida`);
 
 --
 -- Indices de la tabla `clientes`
@@ -240,13 +290,15 @@ ALTER TABLE `empleados`
 -- Indices de la tabla `facturas`
 --
 ALTER TABLE `facturas`
-  ADD PRIMARY KEY (`idFactura`);
+  ADD PRIMARY KEY (`idFactura`),
+  ADD KEY `idPedido` (`idPedido`);
 
 --
 -- Indices de la tabla `menues`
 --
 ALTER TABLE `menues`
-  ADD PRIMARY KEY (`idMenu`);
+  ADD PRIMARY KEY (`idMenu`),
+  ADD KEY `idBebida` (`idBebida`);
 
 --
 -- Indices de la tabla `pedidos`
@@ -281,52 +333,58 @@ ALTER TABLE `turnos`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `bebidas`
+--
+ALTER TABLE `bebidas`
+  MODIFY `idBebida` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `idCliente` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idCliente` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `idEmpleado` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idEmpleado` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `facturas`
 --
 ALTER TABLE `facturas`
-  MODIFY `idFactura` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idFactura` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `menues`
 --
 ALTER TABLE `menues`
-  MODIFY `idMenu` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idMenu` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `idPedido` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idPedido` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `puestos`
 --
 ALTER TABLE `puestos`
-  MODIFY `idPuesto` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idPuesto` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `reservas`
 --
 ALTER TABLE `reservas`
-  MODIFY `idReserva` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idReserva` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `turnos`
 --
 ALTER TABLE `turnos`
-  MODIFY `idTurno` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idTurno` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
@@ -337,6 +395,18 @@ ALTER TABLE `turnos`
 --
 ALTER TABLE `empleados`
   ADD CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`idPuesto`) REFERENCES `puestos` (`idPuesto`);
+
+--
+-- Filtros para la tabla `facturas`
+--
+ALTER TABLE `facturas`
+  ADD CONSTRAINT `facturas_ibfk_1` FOREIGN KEY (`idPedido`) REFERENCES `pedidos` (`idPedido`);
+
+--
+-- Filtros para la tabla `menues`
+--
+ALTER TABLE `menues`
+  ADD CONSTRAINT `menues_ibfk_1` FOREIGN KEY (`idBebida`) REFERENCES `bebidas` (`idBebida`);
 
 --
 -- Filtros para la tabla `pedidos`

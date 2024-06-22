@@ -91,29 +91,36 @@ ORDER BY m.nombre ASC
 LIMIT 2;
 ```
 * *Dias de la semana donde hay mayor N° reservas*
+```
 SELECT DAYNAME(r.fecha) AS dia -- , COUNT(r.idReserva) AS "cantidad de reservas por dia"
 FROM reservas r
 GROUP BY DAYNAME(r.fecha)
 ORDER BY COUNT(r.idReserva) DESC
-
+```
 
 * *Consumidor con mayor cantidad de reservas*
+```
 SELECT c.idCliente, c.nombre, c.apellido, COUNT(r.idReserva) AS totalReservas
 FROM Clientes c
 JOIN Reservas r ON c.idCliente = r.idCliente
 GROUP BY c.idCliente, c.nombre, c.apellido
 ORDER BY totalReservas DESC
 LIMIT 1;
+```
 
 * *Obtener cual es la comida y la bebida que se pidió en el pedido n° 2*
+```
 SELECT p.idPedido, m.nombre AS nombreMenu, b.nombre AS nombreBebida
 FROM Pedidos p
 JOIN Menues m ON p.idMenu = m.idMenu
 JOIN Bebidas b ON m.idBebida = b.idBebida
 WHERE p.idPedido = 2;
+```
 
 * *El cliente con la factura más cara*
+```
 SELECT c.nombre, c.apellido ,MAX(precioTotal) AS "precio total de la factura"
 FROM facturas f
 INNER JOIN pedidos p ON f.idPedido = p.idPedido
 INNER JOIN clientes c ON p.idCliente = c.idCliente
+```
